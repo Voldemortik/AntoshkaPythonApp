@@ -1,0 +1,17 @@
+>>> from learning_logs import models
+>>> models.Topic.objects.all()
+<QuerySet [<Topic: Chess>, <Topic: Rock Climbing>]>
+>>> topics = models.Topic.objects.all()
+>>> for topic in topics:
+...     print(topic.id, topic)
+...
+1 Chess
+2 Rock Climbing
+>>> t = models.Topic.objects.get(id = 1)
+>>> t.text
+'Chess'
+>>> t.date_added
+datetime.datetime(2019, 12, 21, 15, 39, 58, 764452, tzinfo=<UTC>)
+>>> t.entry_set.all()
+<QuerySet []>
+>>> ^Z
